@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Website 1</title>
+</head>
+<body>
+    <h1>Danh sach sinh vien</h1>
+
+    <button onclick="loadData()">Tai du lieu</button>
+
+    <pre id="result">Chua co du lieu</pre>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('/api/students');
+                const data = await response.json();
+
+                document.getElementById('result').textContent =
+                    JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('result').textContent =
+                    'Loi: ' + error;
+            }
+        }
+    </script>
+</body>
+</html>

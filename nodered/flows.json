@@ -1,0 +1,59 @@
+[
+    {
+        "id": "93e5c44f2ee59879",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ded1f210256c3fb4",
+        "type": "http in",
+        "z": "93e5c44f2ee59879",
+        "name": "",
+        "url": "/api/students",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 440,
+        "wires": [
+            [
+                "41b0fac0dad63f4c"
+            ]
+        ]
+    },
+    {
+        "id": "41b0fac0dad63f4c",
+        "type": "function",
+        "z": "93e5c44f2ee59879",
+        "name": "function 1",
+        "func": "msg.payload = {\n    ok: 1,\n    msg: \"thành công\",\n    dssv: [\n        { name: \"Dinh Van Truong\", money: 123 },\n        { name: \"David\", money: 456 }\n    ]\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "0fbb546e7790c77a"
+            ]
+        ]
+    },
+    {
+        "id": "0fbb546e7790c77a",
+        "type": "http response",
+        "z": "93e5c44f2ee59879",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 310,
+        "y": 500,
+        "wires": []
+    }
+]

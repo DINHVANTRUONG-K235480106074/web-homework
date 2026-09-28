@@ -1,0 +1,18 @@
+# Node-RED runtime
+nodered/.config.*
+nodered/.sessions.json
+nodered/.flows.json.backup
+nodered/.flows_cred.json.backup
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+nodered/flows_cred.json
+nodered/settings.js
